@@ -1,0 +1,14 @@
+package Modul2.PRAK203_2410817310012_FaisalTanjung;
+public class Soal3Main {
+    public static void main(String[] args) {
+        Pegawai p1 = new Pegawai();
+        p1.nama = "Roi";
+        p1.asal = "Kingdom of Orvel";
+        p1.setJabatan("Assasin");
+        p1.umur = 17; // tambahkan kode pada baris ini agar nilai umur tidak default 0
+        System.out.println("Nama Pegawai: " + p1.getNama());
+        System.out.println("Asal: " + p1.getAsal());
+        System.out.println("Jabatan: " + p1.jabatan);
+        System.out.println("Umur: " + p1.umur);
+    }
+}
