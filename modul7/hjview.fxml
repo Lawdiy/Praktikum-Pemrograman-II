@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.modul7.controller.JournalController">
+    <top>
+        <VBox alignment="CENTER" style="-fx-background-color: #2d2d2d; -fx-padding: 20; -fx-border-color: #3d3d3d; -fx-border-width: 0 0 2 0;">
+            <children>
+                <Label text="THE HUNTER'S JOURNAL" textFill="#e0e0e0">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+
+    <left>
+        <VBox prefWidth="300.0" spacing="15.0" style="-fx-background-color: #252525; -fx-padding: 20; -fx-border-color: #3d3d3d; -fx-border-width: 0 2 0 0;">
+            <children>
+                <Label text="New Entry" textFill="#bdae93">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="txtId" promptText="ID (e.g., M01)" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #666666;" />
+                <TextField fx:id="txtName" promptText="Creature Name" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #666666;" />
+                <TextField fx:id="txtType" promptText="Type (e.g., Boss)" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #666666;" />
+                <TextField fx:id="txtHealth" promptText="Health (Number Only)" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #666666;" />
+                <TextArea fx:id="txtDesc" prefHeight="150.0" promptText="Hunter's Notes..." style="-fx-control-inner-background: #333333; -fx-text-fill: white;" wrapText="true" />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button onAction="#handleSave" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #4a5d23;" text="CREATE" textFill="WHITE" />
+
+                        <Button onAction="#handleUpdate" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #3b4b5b;" text="UPDATE" textFill="WHITE" />
+
+                        <Button onAction="#handleDelete" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #722f37;" text="DELETE" textFill="WHITE" />
+                    </children>
+                </HBox>
+
+                <Button onAction="#handleClear" prefWidth="Infinity" style="-fx-background-color: transparent; -fx-border-color: #555555; -fx-cursor: hand;" text="Clear Form" textFill="#aaaaaa" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="15.0" style="-fx-padding: 20;">
+            <children>
+                <TableView fx:id="tableMonsters" prefHeight="400.0" prefWidth="540.0" style="-fx-background-color: #252525; -fx-base: #252525; -fx-control-inner-background: #252525;" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colName" prefWidth="200.0" text="Creature Name" />
+                        <TableColumn fx:id="colType" prefWidth="150.0" text="Type" />
+                        <TableColumn fx:id="colHealth" prefWidth="100.0" text="Health" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
